@@ -27,7 +27,7 @@ public class SQLInjectionController extends AbstractController {
 	private JdbcTemplate jdbcTemplate;
 
 	@RequestMapping(value = Config.APP_ROOT + "/bankinfo")
-    public ModelAndView process(@RequestParam(value = "password", required = false) String password, ModelAndView mav,
+    public ModelAndView process(@RequestParam(value = "address", required = false), @RequestParam(value = "password", required = false) String password, ModelAndView mav,
             HttpServletRequest req, Locale locale) {
 	    setViewAndCommonObjects(mav, locale, "sqlijc");
 		String trimedName = StringUtils.trim(name);
